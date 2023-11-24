@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Student Details</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+            display: grid;
+            gap: 10px; /* Adjust the gap as needed */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        h1, h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            margin-bottom: 6px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Additional styling for the first line */
+        h1 {
+            font-size: 24px;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .emoji {
+            font-size: 28px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <h1><span class="emoji">🎓</span>{{ stud.st_name }}<span class="emoji">🌟</span></h1>
+
+        <h2> Student Data</h2>
+
+        <div class="form-group">
+            <label for="st_name">Student Name</label>
+            <input id="st_name" name="st_name" value="{{ stud.st_name }}" type="text" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="standard">Class</label>
+            <input id="standard" name="standard" value="{{ stud.st_standard }}" type="text" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="par_name">Parent Name</label>
+            <input id="par_name" name="par_name" value="{{ stud.st_parent_name }}" type="text" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="birth_year">Birth Year</label>
+            <input id="birth_year" name="birth_year" value="{{ stud.st_birth_year }}" type="text" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="birth_place">Place</label>
+            <input id="birth_place" name="birth_place" value="{{ stud.st_birth_place }}" type="text" class="form-control" required>
+        </div>
+
+        <h2> Student Performance</h2>
+
+        <div class="form-group">
+            <label for="telugu">Telugu</label>
+            <input id="telugu" name="telugu" value="{{ mark.0.marks }}" type="text" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="hindi">Hindi</label>
+            <input id="hindi" name="hindi" value="{{ mark.1.marks }}" type="text" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="english">English</label>
+            <input id="english" name="english" value="{{ mark.2.marks }}" type="text" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="maths">Maths</label>
+            <input id="maths" name="maths" value="{{ mark.3.marks }}" type="text" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="physics">Physics</label>
+            <input id="physics" name="physics" value="{{ mark.4.marks }}" type="text" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="social">Social</label>
+            <input id="social" name="social" value="{{ mark.5.marks }}" type="text" class="form-control" required>
+        </div>
+
+        <button type="submit">Click here to add changes</button>
+    </form>
+

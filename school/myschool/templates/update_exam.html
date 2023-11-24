@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Exam</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .containeer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        hr {
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border: 0;
+            border-top: 1px solid #dee2e6;
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .btn-success {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-success:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="containeer">
+    <form class="col-6 mx-auto card p-3 shadow-lg" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <h2>Update Exam name</h2>
+        <hr>
+        <div class="mb-3">
+            <label for="unitName" class="form-label">Unit name</label>
+            <input name="unit" value="{{ unit.unit_name }}" type="text" class="form-control" id="unitName">
+        </div>
+
+        <button type="submit" class="btn btn-success">Click here to Update Unit Name</button>
+    </form>
+</div>
+
+
+</body>
+</html>

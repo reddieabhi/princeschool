@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Exam Sessional</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <form method="POST" enctype="multipart/form-data" class="bg-light p-4 rounded">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="examName">Name of the Examination</label>
+            <input type="text" class="form-control" name="exam" id="examName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="remarks">Remarks</label>
+            <input type="text" class="form-control" id="remarks">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <table class="table mt-5">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Examination Name</th>
+                <th scope="col">Action</th>
+                <th scope="col">Change</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for u in unit %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ u.unit_name }}</td>
+                <td> 
+                    <a href="/delete_exam/{{ u.unit_id }}" class="btn btn-danger">Delete receipe</a> 
+                </td>
+                <td>
+                    <a href="/update_exam/{{ u.unit_id }}" class="btn btn-success">Change Unit Name</a> 
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

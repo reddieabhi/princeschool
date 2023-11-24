@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prince School</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333; /* Default text color */
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 10px 0;
+            color: #2c3e50; /* School Name Color */
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin: 5px 0;
+        }
+
+        section {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        article {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px;
+            width: 45%;
+            overflow: auto; /* Make the article scrollable */
+            max-height: 300px; /* Set max height for scrollability */
+            border: 2px solid #3498db; /* Border color for articles */
+        }
+
+        article h2 {
+            color: #2c3e50; /* Article Title Color */
+            border-bottom: 1px solid #ddd; /* Border color for title */
+            padding-bottom: 10px; /* Spacing for title */
+        }
+
+        article h3 {
+            color: #2c3e50; /* Subtitle Color */
+        }
+
+        a.login-button {
+            text-decoration: none;
+            color: #fff;
+            display: inline-block;
+            padding: 30px 40px;
+            border-radius: 15px;
+            margin: 20px;
+            font-size: 1.5em;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        a.student-login {
+            background-color: #3498db;
+        }
+
+        a.student-login:hover {
+            background-color: #2980b9;
+        }
+
+        a.staff-login {
+            background-color: #e74c3c;
+        }
+
+        a.staff-login:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Prince School 🏫</h1>
+        <h2>Welcome</h2>
+    </header>
+
+    <!-- Login Buttons with Emojis -->
+    <div style="text-align: center;">
+        <a href="stud_login/" class="login-button student-login">👨‍🎓 Student Login</a>
+        <a href="tlg/" class="login-button staff-login">👥 Staff Login</a>
+    </div>
+
+    <!-- News and Announcements Section -->
+    <section>
+        <article>
+            <h2>News and Announcements</h2>
+            <h3>Winter Vacation</h3>
+            <p>We are excited to announce that winter vacation starts on 17-December-2023. Make sure to mark your calendars!</p>
+
+            <h3>Vacation Tour</h3>
+            <p>There will be a north India Tour starting from 15-December to 22-December, which will be discussed in detail by your class teacher.</p>
+
+            <h3>Winter Vacation</h3>
+            <p>We are excited to announce that winter vacation starts on 17-December-2023. Make sure to mark your calendars!</p>
+
+            <h3>Vacation Tour</h3>
+            <p>There will be a north India Tour starting from 15-December to 22-December, which will be discussed in detail by your class teacher.</p>
+        </article>
+
+        <!-- Events Section -->
+        <article>
+            <h2>Events</h2>
+            <h3>Diwali Celebrations</h3>
+            <p>On the special occasion of Diwali, the institute will be organizing a special event of Diwali ceremony which consists of Laxmi pooja followed by Diwali events and lunch on the date of 21st December.</p>
+
+            <h3>Christmas Celebrations</h3>
+            <p>Christmas will be celebrated in school on the date of 16th December prior to your vacation.</p>
+        </article>
+    </section>
+</body>
+</html>

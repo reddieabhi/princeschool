@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Students</title>
+    <!-- Add Bootstrap CDN link for CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy6fBn0nD67P5HL9sa1PnvGj9aY4aa1" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .table-container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .table {
+            width: 100%;
+        }
+
+        th, td {
+            text-align: center;
+            padding: 12px;
+        }
+
+        .thead-dark th {
+            background-color: #343a40;
+            color: #fff;
+        }
+
+        h1 {
+            color: #1e90ff; /* New font color */
+            text-align: center;
+            background-color: #f0f8ff; /* Highlight color */
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            font-family: 'Georgia', serif; /* New font style */
+            letter-spacing: 1px; /* Added letter-spacing for better readability */
+        }
+
+        .table tbody tr:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+
+        .table tbody tr:hover {
+            background-color: #d4edda;
+        }
+
+        a {
+            color: #1e90ff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Students of class {{ standard }}</h1>
+    <div class="container">
+
+        <a href="/add_stud/"> Add a new student</a>
+        <div class="table-container">
+            
+            
+            <table class="table table-bordered table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Sl No</th>
+                        <th scope="col">Student ID</th>
+                        <th scope="col">Student Name</th>
+                        <th scope="col">Class</th>
+                        <th scope="col">Contact Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for student in students %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>
+                            <a href="/teacher_second/{{ student.student_id }}/"> {{ student.student_id }}</a>
+                        </td>
+                        <td>{{ student.student_details.st_name }}</td>
+                        <td>{{ standard }}</td>
+                        <td>{{ student.student_details.st_parent_name }}</td>
+                    </tr> 
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Add Bootstrap CDN link for CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy6fBn0nD67P5HL9sa1PnvGj9aY4aa1" crossorigin="anonymous">
+</body>
+</html>
+
+
+

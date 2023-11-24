@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Stats</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px 0;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        .total-rank-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .circle-icon {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background-color: #007BFF;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+        }
+
+        .total-rank-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .total-rank-value {
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">Studnet Data</th>
+        </tr>
+            
+        </thead>
+        <tbody>
+            <tr>
+                <td>Name</td>
+                <td>{{ stud.st_name }}</td>
+            </tr>
+            <tr>
+                <td>Birth Year</td>
+                <td>{{ stud.st_birth_year }}</td>
+            </tr>
+            <tr>
+                <td>Place</td>
+                <td>{{ stud.st_birth_place }}</td>
+            </tr>
+            <tr>
+                <td>Parent Name</td>
+                <td>{{ stud.st_parent_name }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Sl No</th>
+                <th scope="col">Subject</th>
+                <th scope="col">Marks</th>
+                <th scope="col">Max Marks</th>  
+            </tr>
+        </thead>
+        <tbody>
+            {% for m in mark %} 
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ m.subject.subject_name }}</td>
+                <td>{{ m.marks }}</td>
+                <td>100</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="total-rank-container">
+        <div class="circle-icon">
+            <p class="total-rank-title">Total</p>
+            <p class="total-rank-value">{{ total_marks }}</p>
+        </div>
+        <div class="circle-icon">
+            <p class="total-rank-title">Rank</p>
+            <p class="total-rank-value">{{ rank }}</p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Statistics</title>
+</head>
+<body>
+    <table class="table">
+        <thead>
+            <th scope="col">Student Bio Data</th>
+        </thead>
+        <tbody>
+            <tr>
+                 <td>FUll  Name</td>
+                <td> {{stud.st_name}}</td>
+            </tr>
+            <tr>
+                <td>Birth Year</td>
+               <td> {{stud.st_birth_year}}</td>
+           </tr>
+           <tr>
+            <td> Place</td>
+           <td> {{stud.st_birth_place}}</td>
+       </tr>
+       <tr>
+        <td>Parent Name</td>
+       <td> {{stud.st_parent_name}}</td>
+   </tr>
+        </tbody>
+    </table>
+
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Sl No</th>
+            <th scope="col">Subject</th>
+            <th scope="col">Marks obtained</th>
+            <th scope="col">Maximum Marks</th>  
+          </tr>
+        </thead>
+        <tbody>
+            {%  for m in mark %} 
+            <tr>
+              
+              <td>{{forloop.counter}}</td>
+              <td>{{m.subject.subject_name}}</td>
+              <td>{{m.marks}}</td>
+              <td>100</td>
+  
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      {{total_marks}}
+      
+      {{rank}}
+    
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Statistics</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px 0;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <table class="table">
+        <thead>
+            <th scope="col">Student Bio Data</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>FUll  Name</td>
+                <td>{{stud.st_name}}</td>
+            </tr>
+            <tr>
+                <td>Birth Year</td>
+                <td>{{stud.st_birth_year}}</td>
+            </tr>
+            <tr>
+                <td>Place</td>
+                <td>{{stud.st_birth_place}}</td>
+            </tr>
+            <tr>
+                <td>Parent Name</td>
+                <td>{{stud.st_parent_name}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Sl No</th>
+                <th scope="col">Subject</th>
+                <th scope="col">Marks obtained</th>
+                <th scope="col">Maximum Marks</th>  
+            </tr>
+        </thead>
+        <tbody>
+            {% for m in marks %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{m.subject.subject_name}}</td>
+                <td>{{m.marks}}</td>
+                <td>100</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+-->
+
